@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--header1-->
+    <div class="row">
+        <div class="col-sm-6 lnews bg-light" style="height:800px;">
+            <div class="text-center fs-3">Latest News</div>
+            <!--start card-->
+            <marquee direction="down" behaviour="alternate">
+            <div class="card mb-3 w-100">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{% static 'images/news1.png' %}"  style="" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <b>Category</b>
+        <p class="card-text mt-2">Nationnal Transgender award 2023:Stepping toward a gender
+            exclusive world</p>
+        <p class="card-text mt-2"><small class="text-muted">Posted Date</small></p>
+     <a href="#" class="btn btn-outline-danger">View  News</a>
+      </div>
+    </div>
+  </div>
+</div>
+                        <div class="card mb-1 w-100">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{% static 'images/news2.png' %}"  style="" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <b>Category</b>
+        <p class="card-text mt-2">Nationnal Transgender award 2023:Stepping toward a gender
+            exclusive world</p>
+        <p class="card-text mt-2"><small class="text-muted">Posted Date</small></p>
+     <a href="#" class="btn btn-outline-danger">View  News</a>
+      </div>
+    </div>
+  </div>
+</div>
+                        <div class="card mb-1 w-100">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{% static 'images/news3.png' %}"  style="" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <b>Category</b>
+        <p class="card-text mt-2">Nationnal Transgender award 2023:Stepping toward a gender
+            exclusive world</p>
+        <p class="card-text mt-2"><small class="text-muted">Posted Date</small></p>
+     <a href="#" class="btn btn-outline-danger">View  News</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</marquee>
+            <!--end card-->
+        </div>
+        <div class="col-sm-6 slider pt-5 bg-light">
+            <!--start slider-->
+            <div class="text-center fs-3">Latest News 24X7</div>
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/slider1.jpg' %}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="text-light">First slide label</h5>
+        <b>Some representative placeholder content for the first slide.</b>
+      </div>
+    </div>
+      {% for x in cslider %}
+    <div class="carousel-item">
+      <img src="/{{x.spic}}"  style="height:576px;" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5 class="text-danger">{{x.shead}}</h5>
+        <b>{{x.ssubject}}</b>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+            <!--end slider-->
+        </div>
+    </div>
+    <!--end header1-->
+ <div class="row p-5">
+     {% for x in cdata %}
+     <div class="col-sm-2 text-center bg-light rounded border border-1 " style="min-height:60px;line-height:60px;padding-bottom:5px;">{{x.cname}}</div>
+  {% endfor %}</div>
+
+    <!--end News Category-->
+    <!-- start news-->
+    <div class="row" style="min-height:600px;">
+        {% for z in lnews %}
+        <div class="col-sm-3">
+            <!--start card-->
+
+            <div class="card w-100">
+  <img src="/{{z.newspic}}"  style="height:250px;" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{z.category}}</h5>
+    <h4 class="card-text text-danger">{{z.headline}}</h4>
+      <p class="card-text">{{z.city}}</p>
+      <p class="card-text text-muted">{{z.cdate}}</p>
+    <a href="#" class="btn btn-outline-danger">View More</a>
+  </div>
+</div>
+
+            <!--end card-->
+        </div>
+        {% endfor %}
+    </div>
+    <!--end news-->
+    <!-- start city-->
+    <div class="row city bg-light">
+        {% for a in ctdata %}
+        <div class="col-sm-2  " style="min-height:100px;">
+        <div class="row p-2" style="background:url(../{{a.cpic}});background-size:cover;">
+            <div class="col-sm-12 text-center fs-3 text-white" style="min-height:100px;background:rgba(0,0,0,.6);line-height:100px;">{{a.city}}</div>
+        </div></div>
+   {% endfor %}
+    </div>
+    <!-- end city-->
+{% endblock %}

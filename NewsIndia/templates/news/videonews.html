@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row text-center">
+    <h2>News <b style="color:red;">Videos</b></h2>
+    {% for a in cvideos %}
+<div class="col-sm-3 bg-light">
+     <div class="card w-100">
+  <img src="/{{a.vpic}}" style="height:200px;" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title text-danger">{{a.vhead}}</h5>
+    <p class="card-text">{{a.vdes}}</p>
+
+    <a href="{{a.vlink}}" class="text-primary">Link:{{a.vlink}}</a>
+  </div>
+</div>
+</div>
+    {% endfor %}
+</div>
+
+{% endblock %}

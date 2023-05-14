@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row text-center">
+   <div class="row bg-light"> <h5 style="padding-top:10px;">Welcome to Bulletin</h5><br/><br/>
+   <h4>Craft narratives that ignite <b style="color:red">inspiration<br/>
+   knowladge</b> and <b style="color:red">entairment</b></h4></div>
+    {% for b in bulnews %}
+    <div class="col-sm-2">
+        <div class="card w-100 ">
+  <img src="/{{b.bpic}}" style="height:200px;border-radius:10px;" class="card-img-top" alt="...">
+  <div class="card-body">
+       <p class="card-text text-muted">{{b.bdate}}</p>
+
+
+
+     <h3 class="card-title text-danger">{{b.bhead}}</h3>
+  </div>
+</div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

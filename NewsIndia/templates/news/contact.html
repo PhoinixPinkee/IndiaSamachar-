@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .icu
+    {
+    display:flex;
+    flex-direction:row;}
+</style>
+<center><h2>Contact With <b style="color:red;">Us</b></h2></center>
+<div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-4">
+           <h4>Send Your Message</h4>
+            <form method="post">
+                {% csrf_token %}
+                <div class="icu">
+                <div>
+               <b> Your Name:</b><br/>
+                <input type="text" name="name" class="txt form-control" placeholder="Enter Your Name" style="height:35px;width:200px;border-radius:5px;"/></div><br/>
+                    <div style="padding-left:20px;"><b>Your Contact:</b><br/>
+                <input type="text" name="mobile" class="txt form-control" placeholder="Enter Your Contact No" style="height:35px;width:200px;border-radius:5px;" /></div></div><br/>
+                <b>Your Email:</b><br/>
+                <input type="email" name="email" class="txt form-control" style="height:35px;width:420px;border-radius:5px;" placeholder="Enter your email" /><br/><br/>
+                <b>Address:</b><br/>
+                <textarea  placeholder="Message" name="message" style="height:80px;width:420px;" class="txt form-control" >
+
+                </textarea><br/><br/>
+                <input type="submit" placeholder="Submit" style="background:red;height:35px;border-radius:5px;"/>
+
+            </form>
+        </div>
+         <div class="col-sm-4 p-5 bg-light">
+             <h3>Contact Info</h3>
+             <i class="fa fa-map-marker text-danger" style="height:20px;width:20px;"></i><b style="color:red;">Office Address</b><br/>
+             <b>Plot NO-44 Behind Nausad<br/>
+             Gida Sector-5<br/>
+             Gida Gorakhpur<br/>
+             Uttar Pradesh 273402</b><br/>
+
+              <i class="fa fa-phone text-danger" style="height:20px;width:20px;"></i><b style="color:red;">Contact Us</b><br/>
+                    <b>+91-97654578423</b>  <br/>
+             <b>+91-834738547846</b><br/>
+ <i class="fa fa-envelope text-danger" style="height:20px;width:20px;"></i>
+             <b style="color:red;">Mail Us</b><br/>
+             <b>IndiaNews@gmail.com</b><br/>
+             <b>samachar@gmail.com</b>
+
+
+         </div>
+
+        <div class="col-sm-2">
+
+        </div>
+    </div>
+<div class="row">
+
+
+    <div class="col-sm-12 text-center">
+        <h3>Find Us On <b style="color:red;">Google Map</b></h3>
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14413.437783877838!2d83.66309778012604!3d25.426243740640835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398dfc0749448cf3%3A0xcc2e269d35287ed0!2sDildar%20Nagar%2C%20Uttar%20Pradesh%20232326!5e0!3m2!1sen!2sin!4v1632681683152!5m2!1sen!2sin"
+                    width="1700" height="350" style="border:0;padding:20px;" allowfullscreen="" loading="lazy"></iframe>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

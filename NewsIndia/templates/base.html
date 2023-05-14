@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>India News</title>
+
+ <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <link href="{% static 'css/all.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet"/>
+    <style>
+        :root
+     {
+        --bg-mycolor:#ff1744;
+        }
+        .bg-mycolor
+        {
+        background:#ff1744;
+        }
+        .ic
+        {
+        border:1px solid white;
+        height:30px;
+        width:30px;
+        line-height:30px;
+        border-radius:3px;
+        }
+        .ic:hover
+        {
+        background:white;
+        color:red;
+        }
+        .menu ul li:hover
+        {
+        background:#ff1744;
+        border-radius:2px;
+        transition:all ease 1s;
+        }
+        .menu ul li
+        {
+        padding:1px 10px;
+        }
+.foot
+{
+display:flex;
+flex-direction:column;
+padding-top:5px;
+color:white
+text-decoration:none;
+}
+.foot a
+{
+color:white;
+text-decoration:none;
+padding:10px;}
+.foot a:hover
+{
+color:red;
+}
+
+    </style>
+</head>
+<body>
+<div class="container-fluid" >
+    <div class="row bg-mycolor text-center text-light py-2" style="background:var(--bg-mycolor);">
+        <div class="col-sm-4">
+            <i class="fa fa-phone ic" > </i> +91-450023456
+        </div>
+        <div class="col-sm-4">
+       <h4>  <b>  Welcome to India News</b></h4>
+        </div>
+        <div class="col-sm-4">
+          <i class="fa fa-youtube ic" > </i><i class="fa fa-facebook ic" > </i>
+          <i class="fa fa-twitter ic" > </i>
+            <i class="fa fa-linkedin ic" > </i>
+        </div>
+
+    </div>
+    <!--start header-->
+<div class="row header">
+<div class="col-sm-1"></div>
+ <div class="col-sm-2">
+     <div>
+         <img src="{% static 'images/news.jpg' %}" style="height:100px;width:140px;line-height:100px;"/>
+     </div>
+ </div>
+  <div class="col-sm-8 menu">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" style="height:80px;">
+<div class="container-fluid">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link active" href="/index/"><i class="fa fa-home"></i>Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about/">About Us</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/news/">News</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="/videonews/">Video News</a>
+      </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/contact/">Contact Us</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " href="/admin/">Login</a>
+      </li>
+    </ul>
+
+  </div>
+    </div>
+</nav>
+
+ <div class="col-sm-1"></div>
+
+</div>
+<!--end header-->
+
+    <!--News category-->
+
+<!--child page-->
+    <div class="row" style="min-height:700px;">
+        <div class="col-sm-12">
+    {% block content %}
+    {% endblock %}
+        </div>
+        </div>
+<!-- end chilepage-->
+<!--start footer-->
+<div class="row ufooter bg-dark" style="min-height:350px;">
+    <div class="row">
+        <div class="col-sm-1 "></div>
+        <div class="col-sm-3 text-light foot">
+            <h4 style="padding-top:25px;">Quick Link</h4>
+            <a href="#" class="st">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">News</a>
+            <a href="#">Video</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Login</a>
+
+
+        </div>
+        <div class="col-sm-3 text-light foot">
+            <h4 style="padding-top:23px;">Our Services</h4>
+             <a href="#" class="st">Daily News</a>
+            <a href="#">Sports News</a>
+            <a href="#"> City News</a>
+            <a href="#"> Top Video</a>
+            <a href="#">News Video</a>
+             <a href="#">India All News</a>
+        </div>
+        <div class="col-sm-3 text-light">
+             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14413.437783877838!2d83.66309778012604!3d25.426243740640835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398dfc0749448cf3%3A0xcc2e269d35287ed0!2sDildar%20Nagar%2C%20Uttar%20Pradesh%20232326!5e0!3m2!1sen!2sin!4v1632681683152!5m2!1sen!2sin"
+                    width="550" height="350" style="border:0;padding:20px;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="col-sm-2 "></div>
+
+
+    </div>
+</div>
+<div class="row bfooter bg-dark" style="min-height:80px;border-top:2px solid white;line-height:100px;">
+    <div class="row text-center">
+        <div class="col-sm-6 text-center text-light">
+  Copyright &copy;www.IndiaNews.com All Right Reserved
+        </div>
+        <div class="col-sm-6 text-center text-light" style="line-height:100px;"><b>Developed By:<i style="color:red;"> Pinkee Mishra</i></b></div>
+    </div>
+</div>
+<!--end footer-->
+</div>
+
+</body>
+</html>
